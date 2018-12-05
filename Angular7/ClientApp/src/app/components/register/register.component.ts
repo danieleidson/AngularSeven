@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 
 //export interface States {
 //  value: string;
@@ -11,6 +12,8 @@ import { Component } from '@angular/core';
 })
 
 export class RegisterComponent {
+  constructor(public snackBar: MatSnackBar) { }
+
   title = "Register";
 
   //states: States[] = [
@@ -32,8 +35,10 @@ export class RegisterComponent {
   ]
 
 
-  public onClick(event: any): void {
+  public onClick(event: any, message: string, action: string): void {
     event.preventDefault();
-    alert("submit clicked");
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 }
