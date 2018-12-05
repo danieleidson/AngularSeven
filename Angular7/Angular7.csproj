@@ -26,10 +26,12 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\angmaterial.ts" />
+    <None Remove="ClientApp\src\app\app.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\angmaterial.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\app.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
