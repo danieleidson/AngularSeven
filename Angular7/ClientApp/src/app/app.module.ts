@@ -9,6 +9,9 @@ import { ColumnComponent } from './components/Shared/column/column.component';
 import { RowComponent } from './components/Shared/row/row.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { RegisterComponent } from './components/register/register.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngMaterialModule
+    AngMaterialModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

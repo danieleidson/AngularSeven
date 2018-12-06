@@ -40,5 +40,26 @@ namespace Angular7.Controllers
                 }
             }
         }
+
+        public class Person
+        {
+            public string firstName { get; set; }
+            public string lastName { get; set; }
+            public string middleName { get; set; }
+            public string address1 { get; set; }
+            public string address2 { get; set; }
+            public string city { get; set; }
+            public string state { get; set; }
+            public string zip { get; set; }
+            public string homePhone { get; set; }
+            public string cellPhone { get; set; }
+            public string email { get; set; }
+        }
+
+        [HttpPost("[action]")]
+        public IActionResult Test([FromBody]Person model)
+        {
+            return Json(new { success = true, responseText = "Welcome, " + model.firstName + " " + model.lastName });
+        }
     }
 }

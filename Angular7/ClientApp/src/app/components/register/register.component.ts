@@ -1,10 +1,26 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
+import { HttpClient } from "@angular/common/http";
 
 //export interface States {
 //  value: string;
 //  text: string;
 //}
+
+export interface Person {
+  firstName: string;
+  lastName: string;
+  middleName: string;
+  address1: string;
+  address2: string;
+  city: string;
+  state: string;
+  zip: string;
+  homePhone: string;
+  cellPhone: string;
+  email: string;
+}
+
 
 @Component({
   selector: 'register',
@@ -12,7 +28,7 @@ import { MatSnackBar } from '@angular/material';
 })
 
 export class RegisterComponent {
-  constructor(public snackBar: MatSnackBar) { }
+  constructor(public snackBar: MatSnackBar, public http: HttpClient) { }
 
   title = "Register";
 
@@ -35,10 +51,21 @@ export class RegisterComponent {
   ]
 
 
-  public onClick(event: any, message: string, action: string): void {
+  public onSubmit(event: any, action: string, person: Person): void {
     event.preventDefault();
-    this.snackBar.open(message, action, {
-      duration: 2000,
-    });
+
+    this.http.post('/api/SampleData/Test', person)
+      .subscribe(
+        data  => {
+          this.snackBar.open(data["responseText"], action, {
+            duration: 2000,
+          });
+        },
+        error => {
+          console.log("Error", error);
+        }
+      );
+
+
   }
 }
