@@ -1,66 +1,101 @@
-<h2>{{title}}</h2>
-<br />
-<br />
+<div class="row">
+  <div class="col-md-12">
+    <h2>{{title}}</h2>
+  </div>
+</div>
 
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>Information</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <mat-form-field>
-      <input matInput placeholder="First Name">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Last Name">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Middle Name">
-    </mat-form-field>
-    <br />
-    <br />
-    <mat-form-field>
-      <input matInput placeholder="Address 1">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Address 2">
-    </mat-form-field>
-    <br />
-    <br />
-    <mat-form-field>
-      <input matInput placeholder="City">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-select placeholder="State">
-        <mat-option>
-          Select State
-        </mat-option>
-        <!--<mat-option *ngFor="let state of states" [value]="state.value">
-          {{state.text}}
-        </mat-option>-->
+<div class="row">
+  <div class="col-md-12">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>
+          <div class="row">
+            <div class="col-md-12">Information</div>
+          </div>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <row>
+          <column lg="4">
+            <mat-form-field>
+              <input matInput placeholder="First Name">
+            </mat-form-field>
+          </column>
+          <column lg="4">
+            <mat-form-field>
+              <input matInput placeholder="Last Name">
+            </mat-form-field>
+          </column>
+          <column lg="4">
+            <mat-form-field>
+              <input matInput placeholder="Middle Name">
+            </mat-form-field>
+          </column>
+        </row>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Address 1">
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Address 2">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <mat-form-field>
+              <input matInput placeholder="City">
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <mat-form-field>
+              <mat-select placeholder="State">
+                <mat-option>
+                  Select State
+                </mat-option>
+                <!--<mat-option *ngFor="let state of states" [value]="state.value">
+                  {{state.text}}
+                </mat-option>-->
+                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-2">
+            <mat-form-field>
+              <input matInput placeholder="Zip">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <mat-form-field>
+              <input matInput placeholder="Home Phone">
+            </mat-form-field>
+          </div>
+          <div class="col-md-2">
+            <mat-form-field>
+              <input matInput placeholder="Cell Phone">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field>
+              <input matInput placeholder="Email">
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onClick($event, 'Form Submitted', 'OK')">Submit</button>
+        <a mat-button mat-raised-button routerLink="/">Back</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
 
-        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Zip">
-    </mat-form-field>
-    <br />
-    <br />
-    <mat-form-field>
-      <input matInput placeholder="Home Phone">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Cell Phone">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Email">
-    </mat-form-field>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="onClick($event, 'Form Submitted', 'OK')">Submit</button>
-    <a mat-button mat-raised-button routerLink="/">Back</a>
-  </mat-card-actions>
-</mat-card>
+
 <br />
 <br>
 
@@ -71,54 +106,56 @@
     </mat-panel-title>
   </mat-expansion-panel-header>
 
-    <mat-form-field>
-      <input matInput placeholder="First Name">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Last Name">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Middle Name">
-    </mat-form-field>
-    <br />
-    <br />
-    <mat-form-field>
-      <input matInput placeholder="Address 1">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Address 2">
-    </mat-form-field>
-    <br />
-    <br />
-    <mat-form-field>
-      <input matInput placeholder="City">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-select placeholder="State">
-        <mat-option>
-          Select State
-        </mat-option>
-        <!--<mat-option *ngFor="let state of states" [value]="state.value">
-          {{state.text}}
-        </mat-option>-->
+  <mat-form-field>
+    <input matInput placeholder="First Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Last Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Middle Name">
+  </mat-form-field>
+  <br />
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="Address 1">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Address 2">
+  </mat-form-field>
+  <br />
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="City">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="State">
+      <mat-option>
+        Select State
+      </mat-option>
 
-        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Zip">
-    </mat-form-field>
-    <br />
-    <br />
-    <mat-form-field>
-      <input matInput placeholder="Home Phone">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Cell Phone">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Email">
-    </mat-form-field>
+      <!--<mat-option *ngFor="let state of states" [value]="state.value">
+        {{state.text}}
+      </mat-option>-->
+      n
+
+      <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Zip">
+  </mat-form-field>
+  <br />
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="Home Phone">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Cell Phone">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Email">
+  </mat-form-field>
 </mat-expansion-panel>
 
 
