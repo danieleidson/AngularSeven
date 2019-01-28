@@ -27,15 +27,13 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\angmaterial.ts" />
     <None Remove="ClientApp\src\app\app.component.ts" />
+    <None Remove="ClientApp\src\app\services\header.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\angmaterial.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\app.component.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ClientApp\src\app\services\" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\header.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

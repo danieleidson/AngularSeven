@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { HttpClient } from "@angular/common/http";
-
+import { HeaderService } from 'src/app/services/header.service';
 //export interface States {
 //  value: string;
 //  text: string;
@@ -28,9 +28,9 @@ export interface Person {
 })
 
 export class RegisterComponent {
-  constructor(public snackBar: MatSnackBar, public http: HttpClient) { }
-
-  title = "Register";
+  constructor(public snackBar: MatSnackBar, public http: HttpClient, private headerService: HeaderService) {
+    this.headerService.setTitle("Register");
+  }
 
   //states: States[] = [
   //  { value: 'AZ', text: 'Arizona' },
@@ -56,7 +56,7 @@ export class RegisterComponent {
 
     this.http.post('/api/SampleData/Test', person)
       .subscribe(
-        data  => {
+        data => {
           this.snackBar.open(data["responseText"], action, {
             duration: 2000,
           });

@@ -1,0 +1,10 @@
+#warning{
+  background-color: #424242;
+  color:white;
+  font-size:12px;
+}
+
+#warning mat-toolbar-row{
+  padding: 0 40px;
+  white-space: normal;
+}
